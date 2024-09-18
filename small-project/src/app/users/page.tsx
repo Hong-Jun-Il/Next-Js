@@ -2,6 +2,7 @@
 
 import { Input } from "@/components/ui/input";
 import { useGetAllUsers } from "@/lib/queries";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function UsersPage() {
@@ -34,7 +35,12 @@ export default function UsersPage() {
         onChange={(e) => setValue(e.target.value)}
         value={value}
       />
-      {users?.map((user) => <h2 key={user.id}>{user.name}</h2>)}
+      {users?.map((user) => (
+        <>
+        <Link href={`/users/${user.id}`} key={user.id}>{user.name}</Link>
+        </>
+      ))}
     </section>
   );
 }
+

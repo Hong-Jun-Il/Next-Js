@@ -16,3 +16,12 @@ export function useGetAllUsers(){
         }
     })
 }
+
+export function useGetUser(id: string){
+    return useQuery({
+        queryKey: ["user", id],
+        queryFn: async(id)=>{
+            
+        }
+    })
+}
