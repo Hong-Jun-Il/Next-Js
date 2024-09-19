@@ -1,8 +1,5 @@
+import Main from "./_components/Main";
 
 export default function TestPage() {
-  return (
-    <div>
-        dasd
-    </div>
-  )
+    return <Main />
 }
