@@ -1,5 +1,19 @@
+import style from "./layout.module.css"
+
 export default function AfterLoginLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <div>{children}</div>;
+  return <div className={style.container}>
+    <header className={style.leftSectionWrapper}>
+      <section className={style.leftSection}></section>
+    </header>
+    <div className={style.rightSectionWrapper}>
+      <div className={style.rightSectionInner}>
+        <main className={style.main}>
+          {children}
+        </main>
+        <section className={style.rightSection}></section>
+      </div>
+    </div>
+  </div>;
 }
