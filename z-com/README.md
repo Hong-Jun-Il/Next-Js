@@ -11,3 +11,8 @@
 ## 3. flex
 > * flex 1은 부모 요소의 크기에서 1:n의 비율로 나눠짐(flex-grow: 1, flew-shrink: 1, flex-basis: 0)
 > * flex-grow가 1이고 flex-basis를 auto로 준다면 일단 자식의 크기를 auto로 계산한 후 부모 요소의 남는 크기를 나누어 자식에게 분배
+
+## 4. useSelectedLayoutSegment, usePathname
+> * URL의 정보를 가져오는 훅 : csr에서만 가능하다
+> * useSelectedLayoutSegment는 현재 라우트의 경로를 가져옴("home")
+> * usePathname은 전체 URL 경로를 가져옴("/home/home2")
