@@ -16,3 +16,7 @@
 > * URL의 정보를 가져오는 훅 : csr에서만 가능하다
 > * useSelectedLayoutSegment는 현재 라우트의 경로를 가져옴("home")
 > * usePathname은 전체 URL 경로를 가져옴("/home/home2")
+
+## 5. ssr에서 csr을 사용하는 법
+> * csr로 만들 컴포넌트를 따로 빼서 ssr 컴포넌트를 children props로 받은 후 ssr에서 csr을 import
+> * csr에서 ssr을 import 할 시 ssr이 csr로 변경됨 << 주의!
