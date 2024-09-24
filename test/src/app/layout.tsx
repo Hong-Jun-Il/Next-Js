@@ -9,12 +9,16 @@ export const metadata: Metadata = {
 
 type Props = {
   children: ReactNode;
+  modal: ReactNode;
 };
 
-export default function RootLayout({ children }: Readonly<Props>) {
+export default function RootLayout({ children, modal }: Readonly<Props>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {modal}
+      </body>
     </html>
   );
 }
