@@ -1,0 +1,18 @@
+.actionBtnSection{
+    height: 48px;
+    width: 100%;
+
+    .actionBtns{
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 16px;
+        margin: 0 auto;
+        height: 100%;
+
+        .btn{
+            border: 1px solid red;
+            align-self: center;
+        }
+    }
+}

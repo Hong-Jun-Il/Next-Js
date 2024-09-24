@@ -11,6 +11,10 @@
 .leftSection{
     flex: 1;
     background-color: rgba(0, 0, 0, .4);
+
+    .photo{
+        flex: 1;
+    }
 }
 
 .rightSection{
