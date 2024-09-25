@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import style from "./post.module.css";
+import style from "./post.module.scss";
 
 export default function Post() {
   const router = useRouter();

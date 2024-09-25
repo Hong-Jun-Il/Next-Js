@@ -5,12 +5,15 @@ import ActionBtnSection from "./_components/ActionBtnSection";
 
 
 export default function page() {
+const fakeImgUrl = faker.image.url();
+
   return (
     <div className={style.modalWrapper}>
       <CloseButton />
       <div className={style.leftSection}>
         <div className={style.photo}>
-          <img src={faker.image.url()} alt="이미지" />
+          <img src={fakeImgUrl} alt="이미지" />
+          <div className={style.image} style={{backgroundImage: `url(${fakeImgUrl})`}} />
         </div>
         <ActionBtnSection />
       </div>

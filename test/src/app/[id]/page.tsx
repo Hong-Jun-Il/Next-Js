@@ -1,6 +1,6 @@
 
 export default function page() {
   return (
-    <div>page</div>
-  )
+    <div>페이지ㅣ잉</div>
+  );
 }

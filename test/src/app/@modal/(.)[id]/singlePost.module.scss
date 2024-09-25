@@ -9,11 +9,25 @@
 }
 
 .leftSection{
+    display: flex;
     flex: 1;
     background-color: rgba(0, 0, 0, .4);
+    flex-direction: column;
 
     .photo{
         flex: 1;
+        display: flex;
+
+        img{
+            display: none;
+        }
+
+        .image{
+            flex: 1;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
     }
 }
 
