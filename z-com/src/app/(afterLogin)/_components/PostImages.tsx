@@ -35,6 +35,7 @@ export default function PostImages({ post }: Props) {
     return (
       <Link
         href={`/${post.User.id}/status/${post.postId}/photo/${post.Images[0].imageId}`}
+        className={cx(style.postImageSection, style.twoImage)}
       >
         <img src={post.Images[0]?.link} alt="" />
       </Link>
@@ -45,6 +46,7 @@ export default function PostImages({ post }: Props) {
     return (
       <Link
         href={`/${post.User.id}/status/${post.postId}/photo/${post.Images[0].imageId}`}
+        className={cx(style.postImageSection, style.threeImage)}
       >
         <img src={post.Images[0]?.link} alt="" />
       </Link>
@@ -55,6 +57,7 @@ export default function PostImages({ post }: Props) {
     return (
       <Link
         href={`/${post.User.id}/status/${post.postId}/photo/${post.Images[0].imageId}`}
+        className={cx(style.postImageSection, style.fourImage)}
       >
         <img src={post.Images[0]?.link} alt="" />
       </Link>

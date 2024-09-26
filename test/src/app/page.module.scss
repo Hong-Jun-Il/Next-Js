@@ -1,0 +1,28 @@
+.main {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.post{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+
+    img{
+        display: none;
+    }
+
+    .image{
+        max-height: 510px;
+        background-position: center;
+        background-repeat: no-repeat;
+        flex: 1;
+    }
+
+    .twoImage{
+        
+    }
+}

@@ -31,6 +31,20 @@ export default function ChatRoom() {
       content: "안녕히 가세요",
       createdAt: new Date(),
     },
+    {
+      messageId: 3,
+      roomId: 123,
+      id: "zeroch0",
+      content: "내 메시지",
+      createdAt: new Date(),
+    },
+    {
+      messageId: 4,
+      roomId: 123,
+      id: "hero",
+      content: "니 메세지",
+      createdAt: new Date(),
+    },
   ];
 
   return (
