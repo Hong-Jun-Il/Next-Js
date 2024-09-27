@@ -1,4 +1,4 @@
-const BASE_URL: string = "https://jsonplaceholder.typicode.co";
+const BASE_URL: string = "https://jsonplaceholder.typicode.com";
 
 type Props = {
   endPoint: string;
