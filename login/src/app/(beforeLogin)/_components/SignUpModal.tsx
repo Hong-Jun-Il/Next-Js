@@ -1,6 +1,6 @@
 "use client";
 
-import { SignUpSchemaType } from "@/app/types/schema";
+import { SignUpSchemaType } from "@/types/schema";
 import RHFInput from "./RHFInput";
 import style from "./signUp.module.scss";
 import { SubmitHandler, useFormContext } from "react-hook-form";

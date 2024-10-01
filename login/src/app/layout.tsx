@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
+import AuthSession from "@/components/AuthSession";
 
 export const metadata: Metadata = {
   title: "홈",
@@ -13,7 +14,9 @@ type Props = {
 export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AuthSession>{children}</AuthSession>
+      </body>
     </html>
   );
 }

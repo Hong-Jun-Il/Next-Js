@@ -4,7 +4,7 @@ import {
   SignUpDefaultValues,
   SignUpSchema,
   SignUpSchemaType,
-} from "@/app/types/schema";
+} from "@/types/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import SignUpModal from "./SignUpModal";

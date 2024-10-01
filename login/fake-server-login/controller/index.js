@@ -4,10 +4,9 @@ const onLogin = (req, res) => {
   const users = db.users;
   try {
     const { id, password } = req.body;
-    console.log(req.body);
     const target = users.find((user) => user.id === id);
     if (!target) {
-      throw new Error("Can't find user");
+      throw new Error("아이디를 확인해주셈");
     }
 
     if (target.password !== password) {
@@ -15,6 +14,7 @@ const onLogin = (req, res) => {
     }
 
     const { password: pw, ...others } = target;
+    console.log(others);
     res.status(200).json(others);
   } catch (error) {
     res.status(400).json({
