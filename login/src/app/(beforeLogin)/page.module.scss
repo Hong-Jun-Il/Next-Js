@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    background-color: aliceblue;
+    flex-direction: column;
+
+    >a {
+        font-size: 5rem;
+    }
+}
