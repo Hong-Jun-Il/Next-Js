@@ -35,7 +35,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   ],
   session: {
     strategy: "jwt",
-    maxAge: 60,
+    maxAge: 60 * 10,
   },
   callbacks: {
     // 토큰에 id와 닉네임 추가
