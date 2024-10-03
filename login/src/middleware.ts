@@ -13,8 +13,9 @@ export default auth((req) => {
 
   // 로그인 안한 상태에서 protected routes 접근 시
   if (!req.auth && isMatch(pathname, matcherForAuth)) {
-    console.log(req.nextUrl.origin);
-    return NextResponse.redirect(new URL("/", req.nextUrl.origin));
+    return NextResponse.redirect(
+      new URL(`/login?redirectedFrom=${pathname}`, req.nextUrl.origin)
+    );
   }
 
   // 로그인 한 상태에서 로그인/회원가입/ 로그인 회원가입 메인 접근 시

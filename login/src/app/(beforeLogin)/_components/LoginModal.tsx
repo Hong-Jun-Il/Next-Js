@@ -9,6 +9,8 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function LoginModal() {
+  const redirectedFrom =
+    new URLSearchParams(location.search).get("redirectedFrom") ?? "/home";
   const router = useRouter();
   const { handleSubmit, setError } = useFormContext<LoginSchemaType>();
   const onSubmit: SubmitHandler<LoginSchemaType> = async (data) => {
@@ -27,7 +29,7 @@ export default function LoginModal() {
         throw new Error(result.code);
       }
 
-      router.replace("/home");
+      router.replace(redirectedFrom);
     } catch (error) {
       console.error(error);
     }

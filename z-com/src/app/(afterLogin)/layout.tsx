@@ -8,6 +8,7 @@ import TrendSection from "./_components/TrendSection";
 import FollowRecommend from "./_components/FollowRecommend";
 import { ReactNode } from "react";
 import RightSearchZone from "./_components/RightSearchZone";
+import RQProvider from "./_components/RQProvider";
 
 type Props = {
   children: ReactNode;
@@ -43,22 +44,24 @@ export default function ({ children, modal }: Readonly<Props>) {
           </div>
         </section>
       </header>
-      <div className={style.rightSectionWrapper}>
-        <div className={style.rightSectionInner}>
-          <main className={style.main}>{children}</main>
-          <section className={style.rightSection}>
-            <RightSearchZone />
-            <TrendSection />
-            <div className={style.followRecommend}>
-              <h3>팔로우 추천</h3>
-              <FollowRecommend />
-              <FollowRecommend />
-              <FollowRecommend />
-            </div>
-          </section>
+      <RQProvider>
+        <div className={style.rightSectionWrapper}>
+          <div className={style.rightSectionInner}>
+            <main className={style.main}>{children}</main>
+            <section className={style.rightSection}>
+              <RightSearchZone />
+              <TrendSection />
+              <div className={style.followRecommend}>
+                <h3>팔로우 추천</h3>
+                <FollowRecommend />
+                <FollowRecommend />
+                <FollowRecommend />
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
-      {modal}
+        {modal}
+      </RQProvider>
     </div>
   );
 }
