@@ -22,4 +22,10 @@ module.exports = {
       password: "user3@user3",
     },
   ],
+
+  posts: Array.from({ length: 54 }, (_, i) => ({
+    id: i + 1,
+    title: `게시물 제목${i}`,
+    content: `게시물${i}게시물${i}게시물${i}게시물${i}게시물${i}게시물${i}게시물${i}게시물${i}게시물${i}게시물${i}게시물${i}`,
+  })),
 };

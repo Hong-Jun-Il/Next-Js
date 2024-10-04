@@ -42,4 +42,21 @@ const signUp = (req, res) => {
   }
 };
 
-module.exports = { onLogin, signUp };
+const getPosts = (req, res) => {
+  const posts = db.posts;
+  const limit = 5;
+
+  try {
+    const { cursor } = req.query;
+    if (cursor) {
+      const data = posts.filter((post) => post.id > cursor);
+    }
+  } catch (error) {
+    res.status(400).json({
+      message: "게시물 조회 실패",
+      error,
+    });
+  }
+};
+
+module.exports = { onLogin, signUp, getPosts };

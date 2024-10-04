@@ -13,6 +13,8 @@ export default function RQProvider({ children }: Readonly<Props>) {
         queries: {
           refetchOnWindowFocus: false,
           retry: false,
+          refetchOnReconnect: false,
+          retryOnMount: true,
         },
       },
     })
