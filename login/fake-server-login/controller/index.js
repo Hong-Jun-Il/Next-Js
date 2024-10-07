@@ -47,10 +47,18 @@ const getPosts = (req, res) => {
   const limit = 5;
 
   try {
-    const { cursor } = req.query;
-    if (cursor) {
-      const data = posts.filter((post) => post.id > cursor);
-    }
+    const { page } = req.query;
+
+    const start = (page - 1) * limit;
+    const end = start + limit;
+
+    const data = posts.slice(start, end);
+
+    res.status(200).json({
+      message: "get posts 성공",
+      posts: data,
+      totalPages: Math.ceil(posts.length / limit),
+    });
   } catch (error) {
     res.status(400).json({
       message: "게시물 조회 실패",
