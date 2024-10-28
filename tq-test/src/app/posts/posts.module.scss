@@ -1,0 +1,13 @@
+.main {
+    min-height: 100dvh;
+    background-color: aliceblue;
+
+    .filter {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        border: 1px solid red;
+    }
+}
