@@ -1,24 +1,28 @@
 import FilterSection from "./_components/FilterSection";
-import { getSchools } from "./_lib/getSchools";
 import style from "./posts.module.scss";
 
-// 나라 지역
 type Props = {
   searchParams: Promise<{
-    country?: string;
-    aria?: string;
+    test1?: string;
+    test2?: string;
   }>;
 };
 
-export default async function Posts({ searchParams }: Props) {
-  const { country, aria } = await searchParams;
-  const { schools } = await getSchools({ country, aria });
-  const countryAr = [...new Set(schools.map((e) => e.country))];
-  const ariaAr = [...new Set(schools.map((e) => e.aria))];
+type Prop = {
+  test1?: string;
+  test2?: string;
+};
 
+async function tttt({ test1, test2 }: Prop) {
+  console.log("실행됨");
+}
+
+export default async function Posts({ searchParams }: Props) {
+  const { test1, test2 } = await searchParams;
+  tttt({ test1, test2 });
   return (
     <main className={style.main}>
-      <FilterSection countries={countryAr} aria={ariaAr} />
+      <FilterSection />
     </main>
   );
 }

@@ -1,13 +1,8 @@
 .main {
     min-height: 100dvh;
     background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .filter {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-        border: 1px solid red;
-    }
 }
