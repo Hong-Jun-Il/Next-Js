@@ -54,12 +54,10 @@ export default function page() {
 
   return (
     <main className={style.test}>
-      <ul className={style.wrapper}>
-        {posts?.map((post, index) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
-      {/* <div className={style.loader} ref={observer} /> */}
+      <div className={style.tt}>dd</div>
+      <div className={style.tt}>dd</div>
+      <div className={style.tt}>dd</div>
+      <div className={style.tt}>dd</div>
     </main>
   );
 }
