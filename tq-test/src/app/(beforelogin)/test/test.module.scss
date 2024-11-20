@@ -2,21 +2,15 @@
     min-height: 100dvh;
     width: 100%;
     background-color: aliceblue;
-    display: flex;
-    flex-wrap: wrap;
 
-    .test {
-        font-size: 3rem;
+    .list {
+        margin-left: 240px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
 
-        .imgWrapper {
-            flex: 1;
-            max-width: 500px;
-            position: relative;
-            aspect-ratio: 16/9;
-            background-color: red;
+        .item {
+            border: 1px solid red;
+            width: min-content;
         }
     }
 }

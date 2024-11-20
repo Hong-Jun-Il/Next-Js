@@ -51,5 +51,12 @@ export default function List() {
   if (isLoading) {
     return <div>로딩중...</div>;
   }
-  return <div>List</div>;
+  return (
+    <section className={style.list}>
+      <div className={style.item}>
+        <div>ql;rfwelsdfkkf</div>
+        <div>aqwdkewqnldfkdsnknfdkjgnjfagnjfdjg</div>
+      </div>
+    </section>
+  );
 }
