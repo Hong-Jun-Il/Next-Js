@@ -22,7 +22,7 @@ export default async (prevState: any, formData: FormData) => {
   let shouldRedirect = false;
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/users`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/signup`,
       {
         method: "post",
         body: formData,
@@ -34,12 +34,12 @@ export default async (prevState: any, formData: FormData) => {
       return { message: "user_exists" };
     }
     console.log(await response.json());
-    shouldRedirect = true;
-    await signIn("credentials", {
-      username: formData.get("id"),
-      password: formData.get("password"),
-      redirect: false,
-    });
+    // shouldRedirect = true;
+    // await signIn("credentials", {
+    //   username: formData.get("id"),
+    //   password: formData.get("password"),
+    //   redirect: false,
+    // });
   } catch (err) {
     console.error(err);
     return { message: null };

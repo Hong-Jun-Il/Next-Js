@@ -16,17 +16,32 @@ export default function LoginModal() {
     setMessage("");
     try {
       const result = await signIn("credentials", {
-        username: id,
+        id,
         password,
         redirect: false,
       });
+
       console.log(result);
-      router.replace("/home");
+      if (result?.error) {
+        switch (result.error) {
+          case "no_user":
+            setMessage("가입하지 않은 유저입니다.");
+            break;
+          case "wrong_password":
+            setMessage("비밀번호가 틀렸습니다.");
+            break;
+          default:
+            setMessage("로그인에 실패했습니다.");
+        }
+        return;
+      }
+      // router.replace("/home");
     } catch (err) {
-      console.error(err);
-      setMessage("아이디와 비밀번호가 일치하지 않습니다.");
+      console.error(err, "WQdsadsad");
+      // setMessage(err.);
     }
   };
+
   const onClickClose = () => {
     router.back();
   };

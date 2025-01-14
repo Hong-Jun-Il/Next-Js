@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth, { CredentialsSignin } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
 export const {
@@ -30,11 +30,18 @@ export const {
               id: credentials?.id,
               password: credentials?.password,
             }),
+            credentials: "include",
+            cache: "no-cache",
           }
         );
 
         if (!authResponse.ok) {
-          return null;
+          if (authResponse.status === 404) {
+            throw new Error("no_user");
+          } else if (authResponse.status === 401) {
+            throw new Error("wrong_password");
+          }
+          throw new Error("invalid_credentials");
         }
 
         const user = await authResponse.json();

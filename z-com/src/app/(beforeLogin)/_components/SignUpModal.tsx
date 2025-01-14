@@ -3,7 +3,8 @@
 import BackButton from "./BackButton";
 import onSubmit from "@/app/(beforeLogin)/_lib/signup";
 import style from "./signup.module.css";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
+import { useActionState } from "react";
 
 function showMessage(messasge: string | null | undefined) {
   if (messasge === "no_id") {
@@ -25,9 +26,8 @@ function showMessage(messasge: string | null | undefined) {
 }
 
 export default function SignupModal() {
-  const [state, formAction] = useFormState(onSubmit, { message: "" });
+  const [state, formAction] = useActionState(onSubmit, { message: "" });
   const { pending } = useFormStatus();
-  const submit = onSubmit;
 
   return (
     <>
