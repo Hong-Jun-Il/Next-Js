@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { MSWComponent } from "@/app/_components/MSWComponent";
 import AuthSession from "./_components/AuthSession";
 
 export const metadata: Metadata = {
@@ -16,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MSWComponent />
         <AuthSession>{children}</AuthSession>
       </body>
     </html>

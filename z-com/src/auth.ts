@@ -11,10 +11,11 @@ export const {
     signIn: "i/flow/login",
     newUser: "i/flow/signup",
   },
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     Credentials({
       credentials: {
-        username: { type: "text" },
+        id: { type: "text" },
         password: { type: "password" },
       },
       authorize: async (credentials) => {
@@ -26,7 +27,7 @@ export const {
               "Content-type": "application/json",
             },
             body: JSON.stringify({
-              id: credentials?.username,
+              id: credentials?.id,
               password: credentials?.password,
             }),
           }
