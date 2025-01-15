@@ -35,13 +35,16 @@ export const {
           }
         );
 
+        throw new Error("test");
+
         if (!authResponse.ok) {
+          const credentialsSignin = new CredentialsSignin();
           if (authResponse.status === 404) {
-            throw new Error("no_user");
+            credentialsSignin.code = "no_user";
           } else if (authResponse.status === 401) {
-            throw new Error("wrong_password");
+            credentialsSignin.code = "wrong_password";
           }
-          throw new Error("invalid_credentials");
+          throw credentialsSignin;
         }
 
         const user = await authResponse.json();

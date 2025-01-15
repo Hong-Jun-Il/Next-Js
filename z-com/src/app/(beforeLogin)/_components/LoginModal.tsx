@@ -21,8 +21,8 @@ export default function LoginModal() {
         redirect: false,
       });
 
-      console.log(result);
       if (result?.error) {
+        console.log(result.error, "asjfjkfndjkoiasj");
         switch (result.error) {
           case "no_user":
             setMessage("가입하지 않은 유저입니다.");
@@ -36,9 +36,9 @@ export default function LoginModal() {
         return;
       }
       // router.replace("/home");
-    } catch (err) {
-      console.error(err, "WQdsadsad");
-      // setMessage(err.);
+    } catch (err: unknown) {
+      // setMessage(err.message);
+      console.log(typeof err, "safnljdsjf");
     }
   };
 

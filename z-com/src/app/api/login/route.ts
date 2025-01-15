@@ -4,6 +4,7 @@ export async function POST(req: Request) {
   try {
     const users = db.User;
     const { id, password } = await req.json();
+    console.log(id, password);
 
     const target = users.find((user) => user.id === id);
     if (!target) {
