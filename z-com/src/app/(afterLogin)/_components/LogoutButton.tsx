@@ -14,6 +14,8 @@ export default function LogoutButton() {
     });
   };
 
+  console.log(me?.user);
+
   if (!me?.user) {
     return null;
   }

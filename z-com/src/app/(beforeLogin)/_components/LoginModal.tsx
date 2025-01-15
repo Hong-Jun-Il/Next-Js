@@ -21,24 +21,24 @@ export default function LoginModal() {
         redirect: false,
       });
 
-      if (result?.error) {
-        console.log(result.error, "asjfjkfndjkoiasj");
-        switch (result.error) {
-          case "no_user":
-            setMessage("가입하지 않은 유저입니다.");
-            break;
-          case "wrong_password":
-            setMessage("비밀번호가 틀렸습니다.");
-            break;
-          default:
-            setMessage("로그인에 실패했습니다.");
-        }
-        return;
-      }
-      // router.replace("/home");
-    } catch (err: unknown) {
-      // setMessage(err.message);
-      console.log(typeof err, "safnljdsjf");
+      // if (result?.error) {
+      //   switch (result.error) {
+      //     case "no_user":
+      //       setMessage("가입하지 않은 유저입니다.");
+      //       break;
+      //     case "wrong_password":
+      //       setMessage("비밀번호가 틀렸습니다.");
+      //       break;
+      //     default:
+      //       setMessage("로그인에 실패했습니다.");
+      //   }
+      //   return;
+      // }
+      router.replace("/home");
+    } catch (error: unknown) {
+      console.error(error);
+      // setMessage("서버에서 오류가 발생하였습니다");
+      setMessage("로그인에 실패했습니다.");
     }
   };
 
