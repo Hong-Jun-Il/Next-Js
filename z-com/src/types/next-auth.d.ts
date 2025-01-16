@@ -10,31 +10,13 @@ type NextAuthUserType = {
 };
 
 declare module "next-auth" {
-  interface User {
-    id: string;
-    name: string;
-    email: string;
-    age: number;
-    image: string;
-  }
+  interface User extends NextAuthUserType {}
 
   interface Session {
-    user: {
-      id: string;
-      name: string;
-      email: string;
-      age: number;
-      image: string;
-    } & DefaultSession["user"];
+    user: NextAuthUserType & DefaultSession["user"];
   }
 }
 
 declare module "next-auth/jwt" {
-  interface JWT {
-    id: string;
-    name: string;
-    email: string;
-    age: number;
-    image: string;
-  }
+  interface JWT extends NextAuthUserType {}
 }

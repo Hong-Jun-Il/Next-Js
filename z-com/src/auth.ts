@@ -49,46 +49,39 @@ export const {
         }
 
         const user = await authResponse.json();
-        console.log(user);
 
         return {
           id: user.id,
           image: user.image,
           name: user.name,
           age: user.age,
+          email: user.email,
         };
       },
     }),
   ],
   callbacks: {
-    // JWT 콜백
     jwt: async ({ token, user }) => {
-      // 첫 로그인 시에만 user를 token에 저장
-      // if (user) {
-      //   token.id = user.id!;
-      //   token.email = user.email;
-      //   token.name = user.name;
-      //   token.age = user.age;
-      //   token.image = user.image!;
-      // }
+      if (user) {
+        token.id = user.id!;
+        token.email = user.email;
+        token.name = user.name;
+        token.age = user.age;
+        token.image = user.image!;
+      }
 
       return token;
     },
+    session: async ({ session, token }) => {
+      if (token) {
+        session.user.id = token.id;
+        session.user.email = token.email!;
+        session.user.name = token.name!;
+        session.user.image = token.image;
+        session.user.age = token.age;
+      }
 
-    // Session 콜백
-    session: async ({ session, token, user }) => {
       return session;
-      // return {
-      //   ...session,
-      //   user: {
-      //     ...session.user,
-      //     id: user.id,
-      //     name: user.name,
-      //     email: user.email,
-      //     age: user.age,
-      //     image: user.image,
-      //   },
-      // };
     },
   },
 });

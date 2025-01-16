@@ -12,7 +12,7 @@ export async function getPostRecommends() {
   );
 
   if (!res.ok) {
-    throw new Error("Faild to fetch data");
+    throw new Error("Failed to fetch data");
   }
 
   revalidatePath("/home");

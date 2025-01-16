@@ -1,3 +1,5 @@
+import { faker } from "@faker-js/faker";
+
 export const db = {
   User: [
     {
@@ -6,6 +8,7 @@ export const db = {
       name: "user1",
       email: "user1@user1.com",
       age: 20,
+      image: faker.image.avatar(),
     },
     {
       id: "user2",
@@ -13,6 +16,7 @@ export const db = {
       name: "user2",
       email: "user2@user2.com",
       age: 40,
+      image: faker.image.avatar(),
     },
     {
       id: "user3",
@@ -20,6 +24,7 @@ export const db = {
       name: "user3",
       email: "user3@user3.com",
       age: 60,
+      image: faker.image.avatar(),
     },
   ],
 };

@@ -6,10 +6,13 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 export default function LoginModal() {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [id, setId] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
   const router = useRouter();
+  const redirectedFrom =
+    new URLSearchParams(window.location.search).get("redirectedFrom") ||
+    "/home";
 
   const onSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -34,10 +37,10 @@ export default function LoginModal() {
       //   }
       //   return;
       // }
-      router.replace("/home");
+
+      router.replace(redirectedFrom);
     } catch (error: unknown) {
       console.error(error);
-      // setMessage("서버에서 오류가 발생하였습니다");
       setMessage("로그인에 실패했습니다.");
     }
   };
@@ -62,7 +65,7 @@ export default function LoginModal() {
             <svg
               width={24}
               viewBox="0 0 24 24"
-              aria-hidden="true"
+              aria-hidden={true}
               className="r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03"
             >
               <g>
