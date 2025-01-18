@@ -13,6 +13,7 @@ export const {
   },
   session: {
     strategy: "jwt",
+    maxAge: 60 * 60 * 24,
   },
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
@@ -26,15 +27,11 @@ export const {
           `${process.env.NEXT_PUBLIC_BASE_URL}/api/login`,
           {
             method: "POST",
-            headers: {
-              "Content-type": "application/json",
-            },
             body: JSON.stringify({
               id: credentials?.id,
               password: credentials?.password,
             }),
             credentials: "include",
-            cache: "no-cache",
           }
         );
 

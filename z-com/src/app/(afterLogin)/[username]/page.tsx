@@ -1,5 +1,4 @@
 import BackButton from "../_components/BackButton";
-import Post from "../_components/Post";
 import style from "./profile.module.css";
 export default function Profile() {
   const user = {
@@ -24,14 +23,7 @@ export default function Profile() {
         </div>
         <button className={style.followButton}>팔로우</button>
       </div>
-      <div>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-      </div>
+      <div></div>
     </main>
   );
 }

@@ -9,6 +9,8 @@ export async function middleware(req: NextRequest) {
       `http://localhost:3000/i/flow/login?redirectedFrom=${req.nextUrl.pathname}`
     );
   }
+
+  return NextResponse.next();
 }
 
 export const config = {

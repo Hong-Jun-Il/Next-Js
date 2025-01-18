@@ -1,5 +1,26 @@
 import { faker } from "@faker-js/faker";
 
+function generateDate() {
+  const lastWeek = new Date();
+  lastWeek.setDate(lastWeek.getDate() - 7);
+  return faker.date.between({
+    from: lastWeek,
+    to: new Date(),
+  });
+}
+
+function generateImages() {
+  const imageCount = Math.floor(Math.random() * 5);
+  if (imageCount === 0) {
+    return null;
+  } else {
+    return Array.from({ length: imageCount }, (_, i) => ({
+      imageId: i + 1,
+      link: faker.image.urlLoremFlickr(),
+    }));
+  }
+}
+
 export const db = {
   User: [
     {
@@ -27,4 +48,17 @@ export const db = {
       image: faker.image.avatar(),
     },
   ],
+  Posts: Array.from({ length: 48 }, (_, i) => ({
+    postId: i + 1,
+    User: {
+      id: "elonmusk",
+      nickname: "Elon Musk",
+      image: faker.image.avatar(),
+    },
+    content: `content${i + 1} content${i + 1} content${i + 1} content${
+      i + 1
+    } content${i + 1}`,
+    createdAt: generateDate(),
+    Images: generateImages(),
+  })),
 };
