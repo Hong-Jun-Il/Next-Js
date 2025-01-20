@@ -1,5 +1,6 @@
 "use client";
 
+import { MouseEventHandler } from "react";
 import style from "./post.module.css";
 import cx from "classnames";
 
@@ -12,8 +13,14 @@ export default function ActionButtons({ white }: Props) {
   const reposted = true;
   const liked = false;
 
-  const onClickComment = () => {};
-  const onClickRepost = () => {};
+  const onClickComment: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.stopPropagation();
+
+    console.log("클릭됨");
+  };
+  const onClickRepost: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.stopPropagation();
+  };
   const onClickHeart = () => {};
 
   return (

@@ -10,6 +10,7 @@ export default function PostRecommends() {
     queryKey: ["posts", "recommends"],
     queryFn: getPostRecommends,
     staleTime: 60 * 1000,
+    gcTime: 1000 * 300,
   });
 
   if (isPending) {

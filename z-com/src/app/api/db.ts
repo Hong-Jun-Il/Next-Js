@@ -61,4 +61,15 @@ export const db = {
     createdAt: generateDate(),
     Images: generateImages(),
   })),
+  followingPosts: Array.from({ length: 22 }, (_, i) => ({
+    postId: i + 1,
+    User: {
+      id: "elonmusk",
+      nickname: "Elon Musk",
+      image: faker.image.avatar(),
+    },
+    content: `${i + 1} Stop Following me. I'm too famous`,
+    Images: generateImages(),
+    createdAt: generateDate(),
+  })),
 };
