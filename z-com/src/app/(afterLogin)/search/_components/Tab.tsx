@@ -5,17 +5,21 @@ import style from "./tab.module.css";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Tab() {
-  const [current, setCurrent] = useState("hot");
-  const router = useRouter();
   const searchParams = useSearchParams();
+  const [current, setCurrent] = useState(searchParams.get("f") || "hot");
+  const router = useRouter();
 
   const onClickHot = () => {
     setCurrent("hot");
-    router.replace(`/search?q=${searchParams.get("q")}`);
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.delete("f");
+    router.replace(`/search?${newSearchParams.toString()}`);
   };
   const onClickNew = () => {
-    setCurrent("new");
-    router.replace(`/search?${searchParams.toString()}&f=live`);
+    setCurrent("live");
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set("f", "live");
+    router.replace(`/search?${newSearchParams.toString()}`);
   };
 
   return (
@@ -23,7 +27,7 @@ export default function Tab() {
       <div className={style.homeTab}>
         <div onClick={onClickHot}>
           인기
-          <div className={style.tabIndicator} hidden={current === "new"} />
+          <div className={style.tabIndicator} hidden={current === "live"} />
         </div>
         <div onClick={onClickNew}>
           최신

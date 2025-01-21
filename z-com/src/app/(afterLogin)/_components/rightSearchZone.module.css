@@ -17,6 +17,14 @@
     cursor: pointer;
 }
 
+.search button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .search input {
     outline: none;
     background-color: inherit;
