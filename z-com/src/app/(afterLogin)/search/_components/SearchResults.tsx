@@ -1,8 +1,9 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import getSearchResult from "../_lib/getSearchResult";
 import { PostType } from "@/types/PostType";
+import { getSearchResult } from "../_lib/getSearchResult";
+import Post from "../../_components/Post";
 
 type Props = {
   searchParams: { q: string; f?: string; pf?: string };
@@ -19,5 +20,5 @@ export default function SearchResults({ searchParams }: Props) {
     queryFn: getSearchResult,
   });
 
-  return <div className="">SearchResultsasd</div>;
+  return data?.posts.map((post) => <Post key={post.postId} post={post} />);
 }

@@ -10,16 +10,8 @@ export default function SinglePost() {
         <BackButton />
         <div className={style.headerTitle}>게시하기</div>
       </div>
-      <Post />
       <CommentForm />
-      <div>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-      </div>
+      <div></div>
     </div>
   );
 }
