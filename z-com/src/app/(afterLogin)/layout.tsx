@@ -9,6 +9,7 @@ import FollowRecommend from "./_components/FollowRecommend";
 import { ReactNode } from "react";
 import RightSearchZone from "./_components/RightSearchZone";
 import RQProvider from "./_components/RQProvider";
+import FollowRecommendSection from "./_components/FollowRecommendSection";
 
 type Props = {
   children: ReactNode;
@@ -53,9 +54,7 @@ export default function ({ children, modal }: Readonly<Props>) {
               <TrendSection />
               <div className={style.followRecommend}>
                 <h3>팔로우 추천</h3>
-                <FollowRecommend />
-                <FollowRecommend />
-                <FollowRecommend />
+                <FollowRecommendSection />
               </div>
             </section>
           </div>

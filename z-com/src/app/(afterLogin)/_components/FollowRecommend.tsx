@@ -1,30 +1,29 @@
-"use client"
+"use client";
 
-import style from './followRecommend.module.css';
+import { followRecommendsUserType } from "@/types/UserType";
+import style from "./followRecommend.module.css";
 
-export default function FollowRecommend() {
+type Props = {
+  rec: followRecommendsUserType;
+};
+
+export default function FollowRecommend({ rec }: Props) {
   const onFollow = () => {};
-
-  const user = {
-    id: 'elonmusk',
-    nickname: 'Elon Musk',
-    image: '/yRsRRjGO.jpg'
-  };
 
   return (
     <div className={style.container}>
       <div className={style.userLogoSection}>
         <div className={style.userLogo}>
-          <img src={user.image} alt={user.id} />
+          <img src={rec.image} alt={rec.id} />
         </div>
       </div>
       <div className={style.userInfo}>
-        <div className={style.title}>{user.nickname}</div>
-        <div className={style.count}>@{user.id}</div>
+        <div className={style.title}>{rec.name}</div>
+        <div className={style.count}>@{rec.id}</div>
       </div>
       <div className={style.followButtonSection}>
         <button onClick={onFollow}>팔로우</button>
       </div>
     </div>
-  )
+  );
 }

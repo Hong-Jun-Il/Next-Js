@@ -16,6 +16,8 @@ export default function RQProvider({ children }: Readonly<Props>) {
           retry: false,
           refetchOnReconnect: false,
           retryOnMount: true,
+          staleTime: 60 * 1000,
+          gcTime: 300 * 1000,
         },
       },
     })
