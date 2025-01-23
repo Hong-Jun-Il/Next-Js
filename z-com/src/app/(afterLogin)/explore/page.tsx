@@ -1,5 +1,5 @@
 import SearchForm from "../_components/SearchForm";
-import Trend from "../_components/Trend";
+import TrendSection from "./_components/TrendSection";
 import style from "./explore.module.css";
 
 export default function Explore() {
@@ -9,16 +9,9 @@ export default function Explore() {
         <SearchForm />
       </div>
       <div className={style.trend}>
-        <h3>나를 위한 트랜드</h3>
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
-        <Trend />
+        <h3>나를 위한 트렌드</h3>
+        <TrendSection />
       </div>
     </main>
-  )
+  );
 }
