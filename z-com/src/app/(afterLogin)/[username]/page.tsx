@@ -3,9 +3,11 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import BackButton from "../_components/BackButton";
 import style from "./profile.module.css";
 import { getUser } from "./_lib/getUser";
+import UserInfo from "./_components/UserInfo";
+import { getUserPosts } from "./_lib/getUserPosts";
+import UserPosts from "./_components/UserPosts";
 
 type Props = {
   params: Promise<{ username: string }>;
@@ -13,37 +15,23 @@ type Props = {
 
 export default async function Profile({ params }: Props) {
   const { username } = await params;
-  console.log(username, "sadsad");
-  // const queryClient = new QueryClient();
-  // await queryClient.prefetchQuery({
-  //   queryKey: ["users", username],
-  //   queryFn: getUser,
-  // });
-  // const dehydrateState = dehydrate(queryClient);
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey: ["users", username],
+    queryFn: getUser,
+  });
+  await queryClient.prefetchQuery({
+    queryKey: ["posts", "users", username],
+    queryFn: getUserPosts,
+  });
+  const dehydrateState = dehydrate(queryClient);
 
-  return null;
-  // return (
-  //   <HydrationBoundary state={dehydrateState}>
-  //     <div>asda</div>
-  //   </HydrationBoundary>
-  // );
-  // return (
-  //   <main className={style.main}>
-  //     <div className={style.header}>
-  //       <BackButton />
-  //       <h3 className={style.headerTitle}>{user.nickname}</h3>
-  //     </div>
-  //     <div className={style.userZone}>
-  //       <div className={style.userImage}>
-  //         <img src={user.image} alt={user.id} />
-  //       </div>
-  //       <div className={style.userName}>
-  //         <div>{user.nickname}</div>
-  //         <div>@{user.id}</div>
-  //       </div>
-  //       <button className={style.followButton}>팔로우</button>
-  //     </div>
-  //     <div></div>
-  //   </main>
-  // );
+  return (
+    <main className={style.main}>
+      <HydrationBoundary state={dehydrateState}>
+        <UserInfo username={username} />
+        <UserPosts username={username} />
+      </HydrationBoundary>
+    </main>
+  );
 }

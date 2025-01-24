@@ -47,6 +47,14 @@ export const db = {
       age: 60,
       image: faker.image.avatar(),
     },
+    {
+      id: "elonmusk",
+      password: "elon@elon",
+      name: "Elon musk",
+      email: "elon@elon.com",
+      age: 60,
+      image: faker.image.avatar(),
+    },
   ],
   Posts: Array.from({ length: 48 }, (_, i) => ({
     postId: i + 1,

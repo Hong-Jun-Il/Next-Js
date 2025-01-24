@@ -14,5 +14,12 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/compose/tweet", "/home", "/explore", "/messages", "/search"],
+  matcher: [
+    "/compose/tweet",
+    "/home",
+    "/explore",
+    "/messages",
+    "/search",
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  ],
 };
