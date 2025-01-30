@@ -1,25 +1,6 @@
 import { faker } from "@faker-js/faker";
-
-function generateDate() {
-  const lastWeek = new Date();
-  lastWeek.setDate(lastWeek.getDate() - 7);
-  return faker.date.between({
-    from: lastWeek,
-    to: new Date(),
-  });
-}
-
-function generateImages() {
-  const imageCount = Math.floor(Math.random() * 5);
-  if (imageCount === 0) {
-    return null;
-  } else {
-    return Array.from({ length: imageCount }, (_, i) => ({
-      imageId: i + 1,
-      link: faker.image.urlLoremFlickr(),
-    }));
-  }
-}
+import generateDate from "./_lib/generateData";
+import generateImages from "./_lib/generateImages";
 
 export const db = {
   User: [

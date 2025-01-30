@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "../../db";
 
 export async function GET(req: NextRequest) {
-  console.log("포스트 요청 실행됨");
-
   try {
     const userId = req.nextUrl.searchParams.get("id");
     const posts = db.Posts;

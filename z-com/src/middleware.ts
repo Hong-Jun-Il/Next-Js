@@ -20,6 +20,6 @@ export const config = {
     "/explore",
     "/messages",
     "/search",
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    // "/((?!api|_next/static|_next/image|favicon.ico).*)",
   ],
 };
