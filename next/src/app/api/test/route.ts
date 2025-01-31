@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
+  console.log(await req.formData());
+
   try {
     return NextResponse.json({
       message: "성공",

@@ -16,6 +16,7 @@ interface Props
   className?: string;
   type?: HTMLInputTypeAttribute;
   name?: string;
+  id?: string;
   readOnly?: boolean;
   required?: boolean;
   value?: string | number;
@@ -38,12 +39,8 @@ export default function CustomInput(props: Props) {
         props.className,
         props.readOnly && "text-white-1"
       )}
-      name={props.name}
-      readOnly={props.readOnly}
       disabled={props.readOnly}
-      required={props.required}
-      value={props.value}
-      onChange={props.onChange}
+      {...props}
     />
   );
 }

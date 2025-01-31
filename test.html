@@ -22,38 +22,37 @@
         background-color: aliceblue;
     }
 
-    .wrapper {
-        display: flex;
-        justify-content: center;
+    .parent {
         width: 500px;
         aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px solid;
-        cursor: pointer;
     }
 
-    .inner {
-        width: 50%;
-        height: 50%;
-        border: 1px solid;
-        cursor: pointer;
+    .child {
+        width: 200px;
+        aspect-ratio: 1/1;
+        border: 1px solid red;
+        letter-spacing: 50%;
     }
 </style>
 
 <body>
     <main class="main">
-        <form method="post" enctype="multipart/form-data">
-            <input type="file" class="file" multiple name="imgs">
-            <input type="text" name="text">
-            <button type="submit">제출</button>
-        </form>
+        <div class="parent">
+            <div class="child">자식</div>
+        </div>
     </main>
 
     <script>
-        document.querySelector("form").addEventListener("submit", (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
+        const parent = document.querySelector(".parent");
+        const child = document.querySelector(".child");
 
-
+        parent.addEventListener("click", (e) => {
+            console.log(e.target, "실제 클릭된 요소");
+            console.log(e.currentTarget, "이벤트 바인딩된 요소");
         })
 
     </script>

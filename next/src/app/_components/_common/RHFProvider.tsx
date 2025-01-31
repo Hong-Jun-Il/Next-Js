@@ -2,16 +2,29 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ReactNode } from "react";
-import { useForm } from "react-hook-form";
+import {
+  DefaultValues,
+  FieldValues,
+  FormProvider,
+  useForm,
+} from "react-hook-form";
+import { ZodType } from "zod";
 
-type Props = {
+type Props<T extends FieldValues> = {
   children: ReactNode;
-  // schema: T
+  schema: ZodType<T>;
+  defaultValues: DefaultValues<T>;
 };
 
-export default function RHFProvider({ children }: Props) {
-  const methods = useForm({
-    // resolver: zodResolver()
+export default function RHFProvider<T extends FieldValues>({
+  children,
+  schema,
+  defaultValues,
+}: Props<T>) {
+  const methods = useForm<T>({
+    mode: "all",
+    resolver: zodResolver(schema),
+    defaultValues,
   });
-  return <div>RHFProvider</div>;
+  return <FormProvider {...methods}>{children}</FormProvider>;
 }
