@@ -1,13 +1,9 @@
-const test = {
-  0: "a",
-  1: "b",
-  get length() {
-    return Object.keys(this).length - 1; // this는 test 객체를 참조
-  },
-};
+function outer() {
+  console.log("아우터");
 
-const s = new Set();
+  return function inner() {
+    return console.log("이너");
+  };
+}
 
-s.add(...[1, 2, 3]);
-
-console.log(s);
+outer();

@@ -9,26 +9,24 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      bgBlack: "#111111",
-      inputBg: "#262626",
-      inputFocusBg: "#00C13A1A",
-      inputFocusBorder: "#00C13A80",
-
-      baseGreen: "#00C13A",
-      borderGray: "#767676",
-      placeholderTextColor: "#999999",
-
-      white: {
-        1: "#ffffff",
-      },
-      black: {
-        2: "#111111",
-      },
-      gray: {
-        5: "#999999",
-      },
-    },
+    // colors: {
+    //   bgBlack: "#111111",
+    //   inputBg: "#262626",
+    //   inputFocusBg: "#00C13A1A",
+    //   inputFocusBorder: "#00C13A80",
+    //   baseGreen: "#00C13A",
+    //   borderGray: "#767676",
+    //   placeholderTextColor: "#999999",
+    //   white: {
+    //     1: "#ffffff",
+    //   },
+    //   black: {
+    //     2: "#111111",
+    //   },
+    //   gray: {
+    //     5: "#999999",
+    //   },
+    // },
   },
   plugins: [require("tailwindcss-animate")],
 };

@@ -23,4 +23,19 @@
   li {
     list-style: none;
   }
+
+
+  /* textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  textarea::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  } */
+
 }

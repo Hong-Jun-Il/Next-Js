@@ -1,7 +1,11 @@
-import CustomInput from "@/components/ui/CustomInput";
-import CustomLabel from "@/components/ui/CustomLabel";
-import { Label } from "@/components/ui/label";
+import { CustomInput } from "@/components/customUi/CustomInput";
+import UserFormProvider from "./_components/User/UserFormProvider";
+import CustomLabel from "@/components/customUi/CustomLabel";
 
 export default function page() {
-  return <main></main>;
+  return (
+    <main className="bg-slate-200 w-full h-dvh flex justify-center items-center">
+      <UserFormProvider />
+    </main>
+  );
 }
