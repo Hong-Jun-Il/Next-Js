@@ -1,9 +1,4 @@
-function outer() {
-  console.log("아우터");
+const hash = new Set();
 
-  return function inner() {
-    return console.log("이너");
-  };
-}
-
-outer();
+hash.add("s");
+console.log(hash);

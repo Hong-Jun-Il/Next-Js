@@ -21,39 +21,14 @@
         width: 100%;
         background-color: aliceblue;
     }
-
-    .parent {
-        width: 500px;
-        aspect-ratio: 1/1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid;
-    }
-
-    .child {
-        width: 200px;
-        aspect-ratio: 1/1;
-        border: 1px solid red;
-        letter-spacing: 50%;
-    }
 </style>
 
 <body>
     <main class="main">
-        <div class="parent">
-            <div class="child">자식</div>
-        </div>
+        <input type="file">
     </main>
 
     <script>
-        const parent = document.querySelector(".parent");
-        const child = document.querySelector(".child");
-
-        parent.addEventListener("click", (e) => {
-            console.log(e.target, "실제 클릭된 요소");
-            console.log(e.currentTarget, "이벤트 바인딩된 요소");
-        })
 
     </script>
 </body>
