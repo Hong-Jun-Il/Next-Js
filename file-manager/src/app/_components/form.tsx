@@ -1,10 +1,19 @@
+"use client";
+
 import { ALLOWED_TYPES, MAX_FILE_SIZE } from "@/lib/constants";
 import { formatFileSize } from "@/lib/utils";
+import { upload } from "../action";
+import { useState } from "react";
 
 export default function Form() {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const handleUpload = async (formData: FormData) => {
+    const result = await upload(formData);
+  };
+
   return (
     <div className="p-6 rounded-lg bg-[#282a36] mb-8 border border-[#44475a]">
-      <form>
+      <form action={handleUpload}>
         <div className="space-y-4">
           <div className="border-2 border-dashed border-[#44475a] rounded-lg p-6 bg-[#1e1f29]">
             <input

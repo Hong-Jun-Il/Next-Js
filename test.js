@@ -1,4 +1,9 @@
-const hash = new Set();
+const fs = require("fs");
 
-hash.add("s");
-console.log(hash);
+fs.mkdir("./test", { recursive: true }, (err) => {
+  if (err) {
+    console.error("Error creating directory:", err);
+  } else {
+    console.log("Directory created successfully!");
+  }
+});
