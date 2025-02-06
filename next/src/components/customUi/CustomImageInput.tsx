@@ -62,6 +62,15 @@ export const CustomImageInput = forwardRef<
     });
   };
 
+  const handleImageDelete = (target: string) => {
+    imageNameSet.delete(target);
+
+    setImages((prev) => {
+      if (!prev) return null;
+      return prev.filter((e) => e.name !== target);
+    });
+  };
+
   return (
     <div className="flex">
       {images && images.length > 0 && (
@@ -74,6 +83,7 @@ export const CustomImageInput = forwardRef<
               <button
                 className="top-0 right-0 text-red-500 cursor-pointer absolute z-10"
                 type="button"
+                onClick={() => handleImageDelete(img.name)}
               >
                 삭제
               </button>
