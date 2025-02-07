@@ -1,9 +1,5 @@
-const fs = require("fs");
+const imgWrapper = document.querySelector(".img-wrapper");
 
-fs.mkdir("./test", { recursive: true }, (err) => {
-  if (err) {
-    console.error("Error creating directory:", err);
-  } else {
-    console.log("Directory created successfully!");
-  }
+imgWrapper.addEventListener("click", () => {
+  imgWrapper.classList.toggle("rotate");
 });
