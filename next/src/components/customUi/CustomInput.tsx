@@ -1,5 +1,5 @@
 import { cn, handleOnInput } from "@/lib/utils";
-import { ComponentProps, FormEvent, forwardRef } from "react";
+import { ComponentProps, forwardRef } from "react";
 
 const defaultStyle =
   "w-full h-[52px] rounded-md px-3 py-[14px] bg-[#F6F6F6] text-[#1A1A1D] text-lg leading-6 font-medium placeholder:text-[#C6C6C7] focus:bg-[#FDFDFD] focus:outline-[#1A1A1D]";

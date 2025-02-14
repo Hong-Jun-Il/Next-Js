@@ -1,17 +1,9 @@
-import { CustomImageInput } from "@/components/customUi/CustomImageInput";
+import UserFormProvider from "./_components/User/UserFormProvider";
 
-export default function page() {
-  const handleSubmitForm = async (formData: FormData) => {
-    "use server";
-    console.log(formData);
-  };
-
+export default function Page() {
   return (
-    <main className="bg-slate-200 w-full h-dvh flex justify-center items-center">
-      <form action={handleSubmitForm}>
-        <CustomImageInput id="images" name="images" multiple maxImages={3} />
-        <button>제출</button>
-      </form>
+    <main className="bg-slate-200 w-full h-dvh flex items-center justify-center">
+      <UserFormProvider />
     </main>
   );
 }

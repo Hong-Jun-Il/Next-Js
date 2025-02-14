@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import RQProvider from "./_components/_common/RQProvider";
 
 export const metadata: Metadata = {
   title: "nextjs 연습",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <RQProvider>{children}</RQProvider>
+      </body>
     </html>
   );
 }

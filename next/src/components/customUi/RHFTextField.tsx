@@ -49,6 +49,7 @@ export default function RHFTextField<T extends FieldValues>({
               // htmlFor이 확실히 지정되어 있지 않다면 id값으로 지정
               htmlFor={htmlFor || id}
               currentLength={field.value.length}
+              className={labelClassName}
               {...props}
             />
           )}
@@ -61,6 +62,7 @@ export default function RHFTextField<T extends FieldValues>({
           {errors[name]?.message && (
             <CustomErrorMessage
               message={(errors[name]?.message as string) || "오류 발생"}
+              className={messageClassName}
             />
           )}
         </div>

@@ -23,3 +23,5 @@ export const CustomTextarea = forwardRef<
     />
   );
 });
+
+CustomTextarea.displayName = "Text Label";
