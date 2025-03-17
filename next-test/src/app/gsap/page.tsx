@@ -5,6 +5,7 @@ import style from "./page.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import "./global.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
