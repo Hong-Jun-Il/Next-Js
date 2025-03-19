@@ -15,19 +15,18 @@ export default function CoreValueDesktop({ className }: CoreValueDesktopProps) {
     <HorizontalScroll
       className={clsx("border border-red-500 h-[400rem]", className)}
     >
-      {({ progress, centerLine }) => (
-        <InspectableBox className="flex gap-[50px] items-center h-full">
-          {({ width, height, x, y }) =>
-            test.map((e, i) => (
-              <div
-                key={e}
-                className="w-[500px] aspect-square border border-amber-500 flex flex-col justify-center items-center text-8xl"
-              >
-                {i}번 카드
-              </div>
-            ))
-          }
-        </InspectableBox>
+      {({ centerLine }) => (
+        <div className="h-full flex items-center">
+          <div className="flex gap-[3.2rem]">
+            {test.map((card, index) => (
+              <InspectableBox key={index}>
+                {({ width, height, x, y }) => (
+                  <div className="border border-amber-500 w-[500px] aspect-square"></div>
+                )}
+              </InspectableBox>
+            ))}
+          </div>
+        </div>
       )}
     </HorizontalScroll>
   );
