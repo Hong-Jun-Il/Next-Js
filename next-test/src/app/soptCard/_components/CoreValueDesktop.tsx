@@ -21,7 +21,11 @@ export default function CoreValueDesktop({ className }: CoreValueDesktopProps) {
             {test.map((card, index) => (
               <InspectableBox key={index}>
                 {({ width, height, x, y }) => (
-                  <div className="border border-amber-500 w-[500px] aspect-square"></div>
+                  <div className="border border-amber-500 w-[500px] aspect-square">
+                    {x}
+                    "SAdsad"
+                    {y}
+                  </div>
                 )}
               </InspectableBox>
             ))}

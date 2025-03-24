@@ -27,8 +27,8 @@ const useDomInspect = (ref: RefObject<HTMLElement | null>) => {
 
       for (const entrie of entries) {
         setPositionContext({
-          width: entrie.contentRect.width,
-          height: entrie.contentRect.height,
+          width: ref.current.offsetWidth,
+          height: ref.current.offsetHeight,
           x: ref.current.offsetLeft,
           y: ref.current.offsetTop,
         });
