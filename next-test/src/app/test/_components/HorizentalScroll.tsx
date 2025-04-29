@@ -23,7 +23,7 @@ export default function HorizentalScroll() {
     offset: ["start start", "end end"],
   });
 
-  const translateX = useTransform(scrollYProgress, [0, 0.9], ["110vw", "0vw"]);
+  const translateX = useTransform(scrollYProgress, [0, 0.9], ["100vw", "0vw"]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log("Page scroll: ", latest);

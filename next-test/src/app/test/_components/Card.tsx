@@ -9,17 +9,11 @@ type Props = {
 };
 
 export default function Card({ scrollYProgress, totalCard, idx }: Props) {
-  const step = totalCard * 2;
-  const start = (1 / step) * 0.5 + idx / step;
-  const end = start + 1 / step;
+  const step = 1 / totalCard / 2;
+  const start = step * idx + step * totalCard - step;
+  const end = start + totalCard + 1;
 
-  // console.log(start, end);
-
-  const rotateY = useTransform(
-    scrollYProgress,
-    [start, end],
-    ["0deg", "180deg"]
-  );
+  const rotateY = useTransform(scrollYProgress, [start, 1], ["0deg", "180deg"]);
   return (
     <motion.div
       style={{
@@ -29,7 +23,7 @@ export default function Card({ scrollYProgress, totalCard, idx }: Props) {
       className="aspect-[1/1.5] transform-3d rotate-y-0"
     >
       <div className="absolute top-0 backface-hidden bg-amber-200 w-full h-full flex justify-center items-center">
-        앞
+        앞<p>{start}</p>
       </div>
       <div className="absolute top-0 backface-hidden rotate-y-180 bg-fuchsia-400 w-full h-full flex justify-center items-center">
         뒤
