@@ -1,6 +1,5 @@
 "use client";
 
-import useDomInspect from "@/hooks/useDomInspect";
 import {
   useMotionValueEvent,
   useScroll,
@@ -16,14 +15,12 @@ export default function HorizentalScroll() {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const viewRef = useRef<HTMLDivElement | null>(null);
 
-  const { height: wrapperHeight } = useDomInspect(wrapperRef);
-
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
     offset: ["start start", "end end"],
   });
 
-  const translateX = useTransform(scrollYProgress, [0, 0.9], ["100vw", "0vw"]);
+  const translateX = useTransform(scrollYProgress, [0, 1], ["100vw", "0vw"]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log("Page scroll: ", latest);
